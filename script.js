@@ -40,11 +40,11 @@ var diceRoll = function () {
 
 var getPlayerScore = function (playerInput) {
   var playerScore;
-  // if input is not 1 or 2
-  if (playerInput != 1 && playerInput != 2) {
-    console.log(`if player fails to input 1 or 2`);
-    return `Please key in either 1 or 2 to choose the Dice that you want to be the first number <br> Dice 1 : ${currentPlayerRolls[0]} <br> Dice 2 : ${currentPlayerRolls[1]}`;
-  }
+  // // if input is not 1 or 2
+  // if (playerInput != 1 && playerInput != 2) {
+  //   console.log(`if player fails to input 1 or 2`);
+  //   return `Please key in either 1 or 2 to choose the Dice that you want to be the first number <br> Dice 1 : ${currentPlayerRolls[0]} <br> Dice 2 : ${currentPlayerRolls[1]}`;
+  // }
 
   // if input is 1
   if (playerInput == 1) {
@@ -92,7 +92,7 @@ var main = function (input) {
   if (gameMode == diceRollGameMode) {
     console.log(`game mode == diceRollGameMode`);
 
-    myOutputValue = `${rollDiceForPlayer()} <br> Please key in 1 or 2 to choose the Dice that you want to be the first number `;
+    myOutputValue = `${rollDiceForPlayer()} <br> Please key in 1 or 2 to choose the Dice that you want to be the first number.  `;
 
     gameMode = diceChooseMode;
     console.log(`game mode changes to dice choose mode`);
@@ -103,8 +103,7 @@ var main = function (input) {
   if (gameMode == diceChooseMode) {
     if (input != 1 && input != 2) {
       console.log(`invalidation`);
-      return (myOutputValue =
-        "Please input either 1 or 2 in the selection for your Dice sequence");
+      return (myOutputValue = `Please input either 1 or 2 in the selection for your Dice sequence.<br> Dice 1 : ${currentPlayerRolls[0]} <br> Dice 2 : ${currentPlayerRolls[1]}`);
     } else {
       console.log(`player score input`);
       myOutputValue = getPlayerScore(input);

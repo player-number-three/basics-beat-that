@@ -72,7 +72,7 @@ var getPlayerScore = function (playerInput) {
   currentPlayerRolls = [];
   console.log(`current player rolls reset`);
 
-  return `${currentPlayer} your chosen value is   ${playerScore}`;
+  return `Player ${currentPlayer} your chosen value is   ${playerScore}`;
 
   // return `Hello player ${currentPlayer}! you have chosen ${playerScore}`;
 };

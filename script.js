@@ -72,7 +72,7 @@ var getPlayerScore = function (playerInput) {
   currentPlayerRolls = [];
   console.log(`current player rolls reset`);
 
-  return "your chosen value is " + playerScore;
+  return `${currentPlayer} your chosen value is   ${playerScore}`;
 
   // return `Hello player ${currentPlayer}! you have chosen ${playerScore}`;
 };
@@ -101,8 +101,14 @@ var main = function (input) {
   }
 
   if (gameMode == diceChooseMode) {
-    console.log(`player score input`);
-    myOutputValue = getPlayerScore(input);
+    if (input != 1 && input != 2) {
+      console.log(`invalidation`);
+      return (myOutputValue =
+        "Please input either 1 or 2 in the selection for your Dice sequence");
+    } else {
+      console.log(`player score input`);
+      myOutputValue = getPlayerScore(input);
+    }
 
     if (currentPlayer == 1) {
       console.log(` end of player 1 turn, beginning of player 2 turn`);

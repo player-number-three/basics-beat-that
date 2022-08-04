@@ -74,6 +74,13 @@ var getPlayerScore = function (playerInput) {
   // return `Hello player ${currentPlayer}! you have chosen ${playerScore}`;
 };
 
+var restartGame = function () {
+  currentPlayer = 1;
+  allPlayerScore = [];
+  gameMode = diceRollGameMode;
+  console.log(`restarting the game`);
+};
+
 var main = function (input) {
   console.log(gameMode, `current game mode`);
   console.log(currentPlayer, ` current player `);
@@ -126,6 +133,9 @@ var main = function (input) {
       console.log("player 2 wins!");
       myOutputValue = "Player 2 WINS!";
     }
+    console.log(`final score compared`);
+    restartGame();
+
     return myOutputValue + `<br> Click Submit to play again!`;
   }
 };

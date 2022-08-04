@@ -15,6 +15,9 @@ var currentPlayer = 1;
 //player score
 var allPlayerScore = [];
 // player rolls function
+//scores
+var player1Win = 0;
+var player2Win = 0;
 var rollDiceForPlayer = function () {
   var counter = 0;
   while (counter < 2) {
@@ -126,16 +129,18 @@ var main = function (input) {
     //if player 1 win
     if (allPlayerScore[0] > allPlayerScore[1]) {
       console.log("player 1 wins!");
+      player1Win++;
       myOutputValue = "Player 1 WINS!";
     }
     //if player 2 win
     if (allPlayerScore[0] < allPlayerScore[1]) {
       console.log("player 2 wins!");
+      player2Win++;
       myOutputValue = "Player 2 WINS!";
     }
     console.log(`final score compared`);
     restartGame();
 
-    return myOutputValue + `<br> Click Submit to play again!`;
+    return `<b> ${myOutputValue}<b> <br>  <br> The score now is :<br> <b> Player 1 : ${player1Win} <b> <br> <b> Player 2 : ${player2Win} <b><br> <br>Click Submit to play again!`;
   }
 };
